@@ -2,15 +2,24 @@ import React, {Component} from 'react';
 import {Row, Col, Container} from 'react-bootstrap'
 import { connect } from 'react-redux';
 import Person from './Person';
-
+import PersonAPI from '../assets/person'
 class PersonContainer extends Component {
+
+    componentDidMount(){
+        // PersonAPI.all()
+        //         .then(persons => 
+        //             this.props.dispatch({
+        //                 type: 'person/INIT',
+        //                 payload: persons
+        //         }))
+    }
     createCard = personProps =>{
         <Col xs={4}><Person {...personProps} /></Col>
     }
 
     createRows = rows => (
         <Row key={`${Math.random()}-${Date.now()}`}>
-            {rows.map(i => this.createCard(Object.assign(i, {key: i, id})))}
+            {rows.map(i => this.createCard(Object.assign(i, {key: i.id})))}
         </Row>
     )
 
