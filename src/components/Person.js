@@ -2,7 +2,7 @@ import React, {Component, Fragment } from 'react'
 // import { connect } from 'react-redux'
 import { Button, Card, Row, Col } from 'react-bootstrap'
 
-const Person = ({name, address, phoneNumber, photo}) => {
+const Person = ({name, address, phoneNumber, photo}) => (
     <Card className='container-fluid p-4 text-center'>
         <Card.Img variant='top' src={photo}/>
         <Card.Body>
@@ -15,7 +15,7 @@ const Person = ({name, address, phoneNumber, photo}) => {
             <Button variant='danger'>Remove</Button>
         </Card.Body>
     </Card>
-}
+)
 
 export default Person
 

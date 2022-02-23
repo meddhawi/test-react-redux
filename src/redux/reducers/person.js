@@ -7,15 +7,16 @@ const initialState = [{
     phoneNumber: '+62-6666-666'
 }]
 
-export default function(state = initialState, action){
-    switch(action.type){
-        case ADD:
-            return [...state, action.payload]
-        
+export default function(state = initialState, action) {
+    switch(action.type) {
+        case ADD: 
+            return [
+                ...state, 
+                action.payload
+            ]
         case INIT:
-            return action.payload 
-
-        default:
+            return action.payload
+        default: 
             return state
     }
 }
